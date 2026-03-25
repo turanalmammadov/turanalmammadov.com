@@ -25,10 +25,7 @@ export function SiteHeader() {
           >
             Writing
           </a>
-          <a
-            href="mailto:turan@almammadov.com"
-            className="transition hover:text-stone-100"
-          >
+          <a href="#contact" className="transition hover:text-stone-100">
             Contact
           </a>
         </nav>

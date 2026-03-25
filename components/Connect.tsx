@@ -1,3 +1,5 @@
+import { ContactForm } from "@/components/ContactForm";
+
 const links = [
   {
     label: "Email",
@@ -56,6 +58,10 @@ export function Connect() {
             </li>
           ))}
         </ul>
+
+        <div className="mt-14">
+          <ContactForm />
+        </div>
       </div>
     </section>
   );
