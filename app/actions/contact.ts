@@ -29,10 +29,13 @@ export async function submitContact(
   }
 
   if (!isDatabaseConfigured()) {
+    const onVercel = Boolean(process.env.VERCEL);
+    const hint = onVercel
+      ? "Vercel Dashboard → your project → Storage → open your Neon database → Connect Project → check Production (and Preview if needed) → Save, then Redeploy. Run db/schema.sql once in the Neon SQL editor."
+      : "Create .env.local in the project root with DATABASE_URL=postgresql://… from Neon (Dashboard → Connect). Restart npm run dev.";
     return {
       ok: false,
-      error:
-        "The contact form is not connected to a database yet. Add DATABASE_URL (Neon) in Vercel or .env.local.",
+      error: `No database connection string found (${hint})`,
     };
   }
 
